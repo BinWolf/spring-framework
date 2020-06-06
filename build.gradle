@@ -150,8 +150,15 @@ configure(allprojects) { project ->
 		reports.junitXml.setDestination(file("$buildDir/test-results"))
 	}
 
+//	repositories {
+//		maven { url "https://repo.spring.io/libs-release" }
+//	}
 	repositories {
+		maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+		maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter" }
+		mavenCentral()
 		maven { url "https://repo.spring.io/libs-release" }
+		maven { url "https://repo.spring.io/milestone" } // Reactor
 	}
 
 	dependencies {
