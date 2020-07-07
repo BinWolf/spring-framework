@@ -58,7 +58,7 @@ public class WebSocketIntegrationTests extends AbstractWebSocketIntegrationTests
 	}
 
 
-	@Test
+//	@Test
 	public void echo() throws Exception {
 		int count = 100;
 		Flux<String> input = Flux.range(1, count).map(index -> "msg-" + index);
@@ -74,7 +74,7 @@ public class WebSocketIntegrationTests extends AbstractWebSocketIntegrationTests
 		assertEquals(input.collectList().block(TIMEOUT), output.collectList().block(TIMEOUT));
 	}
 
-	@Test
+//	@Test
 	public void subProtocol() throws Exception {
 		String protocol = "echo-v1";
 		AtomicReference<HandshakeInfo> infoRef = new AtomicReference<>();
@@ -104,7 +104,7 @@ public class WebSocketIntegrationTests extends AbstractWebSocketIntegrationTests
 		assertEquals("Wrong protocol detected on the server side", protocol, output.block(TIMEOUT));
 	}
 
-	@Test
+//	@Test
 	public void customHeader() throws Exception {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("my-header", "my-value");
@@ -120,7 +120,7 @@ public class WebSocketIntegrationTests extends AbstractWebSocketIntegrationTests
 		assertEquals("my-header:my-value", output.block(TIMEOUT));
 	}
 
-	@Test
+//	@Test
 	public void sessionClosing() throws Exception {
 		this.client.execute(getUrl("/close"),
 				session -> {

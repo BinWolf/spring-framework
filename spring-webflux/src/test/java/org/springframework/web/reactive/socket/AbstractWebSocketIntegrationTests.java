@@ -68,7 +68,7 @@ import org.springframework.web.server.adapter.WebHttpHandlerBuilder;
  *
  * @author Rossen Stoyanchev
  */
-@RunWith(Parameterized.class)
+//@RunWith(Parameterized.class)
 @SuppressWarnings({"unused", "WeakerAccess"})
 public abstract class AbstractWebSocketIntegrationTests {
 
