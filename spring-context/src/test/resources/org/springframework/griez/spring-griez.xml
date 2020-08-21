@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bfpp" class="org.springframework.griez.GriezBeanFactoryPostProcessor">
+		<property name="obscenities">
+			<set>
+				<value>Griez</value>
+				<value>Wolf</value>
+				<value>Fuck</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="griez" class="org.springframework.griez.GriezPostProcessor">
+		<property name="connectionString" value="Griez"/>
+		<property name="password" value="qwertasdf"/>
+		<property name="username" value="wolf"/>
+	</bean>
+</beans>
